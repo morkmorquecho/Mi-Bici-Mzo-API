@@ -1,5 +1,7 @@
 package com.example.MiBiciMzo.controllers;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PatchMapping;
@@ -33,4 +35,9 @@ public class BicisController {
         return bicisService.getAverdidoById(id);
     }
 
+    @GetMapping("/mostrar")
+    public List<BicisModel> getAllBicis() {
+        return bicisService.getAllBicis();
+    }
+    
 }

@@ -1,4 +1,5 @@
 package com.example.MiBiciMzo.services;
+import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -39,5 +40,10 @@ public class BicisService {
         BicisModel bicisModel = bicisRepository.findById(id)
             .orElseThrow(() -> new RuntimeException("Bicicleta no encontrada"));
         return bicisModel.getAveriada();
+    }
+
+
+    public List<BicisModel> getAllBicis() {
+        return bicisRepository.findAll();
     }
 }
